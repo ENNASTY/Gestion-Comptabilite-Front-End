@@ -1,0 +1,19 @@
+<h1 class="m-4 text-danger">Liste des factures</h1>
+<table class="table table-striped ">
+  <thead>
+
+  <th>Reference : </th>
+  <th>montantHorsTaxe : </th>
+  <th>Date De Facture: </th>
+  <th>Action : </th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let c of factures">
+
+    <td>{{c.ref}}</td>
+    <td>{{c.montantHorsTaxe}}</td>
+    <td>{{c.dateFacture}}</td>
+    <td><button (click)="delete(c)" class="btn btn-sm btn-danger">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
