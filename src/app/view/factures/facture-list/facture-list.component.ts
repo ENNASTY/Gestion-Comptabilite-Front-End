@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FactureService} from "../../../controller/service/facture.service";
 import {Facture} from "../../../controller/model/facture.model";
+import {ConfirmationService, MessageService} from "primeng/api";
+import {DeclarationTva} from "../../../controller/model/declaration-tva.model";
 
 @Component({
   selector: 'app-facture-list',
@@ -8,7 +10,7 @@ import {Facture} from "../../../controller/model/facture.model";
   styleUrls: ['./facture-list.component.css']
 })
 export class FactureListComponent implements OnInit{
-constructor(private factureService: FactureService) {
+constructor(private messageService: MessageService, private confirmationService: ConfirmationService,private factureService: FactureService) {
 }
   ngOnInit(): void {
   this.findAll();
@@ -18,11 +20,11 @@ constructor(private factureService: FactureService) {
       data => this.factures = data
     );
   }
-  get facture(): Facture {
+  get facture(): any {
     return this.factureService.facture;
   }
 
-  set facture(value: Facture) {
+  set facture(value: any) {
     this.factureService.facture = value;
   }
 
@@ -33,14 +35,32 @@ constructor(private factureService: FactureService) {
   set factures(value: Array<Facture>) {
     this.factureService.factures = value;
   }
-  public delete(c: Facture) {
-    this.factureService.deleteByReference(c.ref).subscribe(
-      data => {
-        let index = this.factures.findIndex(e => c.ref == e.ref);
-        this.factures.splice(index, 1);
+  public deleteFacture(facture: Facture){
+    this.facture = facture;
+    this.confirmationService.confirm({
+      message: 'Voulez-vous supprimer la facture - ' + facture.ref + '?',
+      header: 'Confirm',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.factureService.deleteByReference(facture.ref).subscribe(data => {
+          this.factures = this.factures.filter(val => val.id !== this.facture.id);
+          this.facture = null;
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Successful',
+            detail: 'Facture supprimee!',
+            life: 3000
+          });
+        });
       }
-    );
+    });
   }
-
-
+  public openView(facture: Facture){
+    this.facture={...facture};
+    this.factureService.viewDialog=true;
+  }
+  public openCreate(){
+    this.facture=new Facture();
+    this.factureService.createDialog=true;
+  }
 }

@@ -7,5 +7,5 @@ export class DeclarationIS {
   public charge: number;
   public benifice: number;
   public montantIS: number;
-  public tauxIS: TauxIS;
+  public tauxIS=new TauxIS();
 }

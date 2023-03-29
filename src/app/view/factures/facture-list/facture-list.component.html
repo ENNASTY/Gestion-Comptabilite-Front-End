@@ -1,19 +1,38 @@
-<h1 class="m-4 text-danger">Liste des factures</h1>
-<table class="table table-striped ">
-  <thead>
+<div class="card">
+  <p-toast></p-toast>
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb-2" (click)="openCreate()" ></button>
+    </ng-template>
+  </p-toolbar>
+  <div class="card-header">Liste des factures</div>
+  <div class="card-body">
+    <table class="table table-striped ">
+      <thead>
+      <th>Reference</th>
+      <th>Montant Hors Taxe</th>
+      <th>Date De Facture</th>
+      <th>Montant TTC</th>
+      <th>Montant TVA</th>
+      <th>Type facture</th>
+      <th>Action</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let f of factures">
+        <td>{{f.ref}}</td>
+        <td>{{f.montantHorsTaxe}}</td>
+        <td>{{f.dateFacture}}</td>
+        <td>{{f.montantTtc}}</td>
+        <td>{{f.montantTva}}</td>
+        <td>{{f.typeFacture.libelle}}</td>
+        <td><span (click)="deleteFacture(f)"><i class="fa fa-trash btn btn-danger "></i></span></td>
+        <td><span (click)="openView(f)"><i class="fa fa-eye btn btn-success"></i></span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-facture-create></app-facture-create>
+  <app-facture-view></app-facture-view>
+  <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+</div>
 
-  <th>Reference : </th>
-  <th>montantHorsTaxe : </th>
-  <th>Date De Facture: </th>
-  <th>Action : </th>
-  </thead>
-  <tbody>
-  <tr *ngFor="let c of factures">
-
-    <td>{{c.ref}}</td>
-    <td>{{c.montantHorsTaxe}}</td>
-    <td>{{c.dateFacture}}</td>
-    <td><button (click)="delete(c)" class="btn btn-sm btn-danger">Delete</button></td>
-  </tr>
-  </tbody>
-</table>
