@@ -8,7 +8,7 @@ export class DeclarationIrEmployee {
   public salaireNet:number;
   public salaireBrut:number;
   public montantIR:number;
-  public employee = new Employee();
-  public declarationIR = new DeclarationIR();
-  public tauxIR = new TauxIR();
+  public employee=new Employee();
+  public declarationIR=new DeclarationIR();
+  public tauxIR=new TauxIR();
 }

@@ -1,0 +1,71 @@
+<p-dialog [(visible)]="viewDialog" [style]="{width: '450px'}" header="Details facture" [modal]="true"
+          styleClass="p-fluid">
+  <ng-template pTemplate="content">
+    <div class="p-grid ">
+
+      <div class="p-col-6 d-flex">
+        <div class="p-field">
+          <label for="ref">Reference</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="ref"
+                 [(ngModel)]="facture.ref" disabled>
+        </div>
+      </div>
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="date">Date de facture</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="date"
+                 [(ngModel)]="facture.dateFacture" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="trim">Triméstre</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="trim"
+                 [(ngModel)]="facture.trim" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="typedeclarationtva">Type de facture</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"
+                 id="typedeclarationtva" [(ngModel)]="facture.typeFacture.libelle" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="MontantHT">Montant Hors Taxe (MAD)</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"
+                 id="MontantHT" [(ngModel)]="facture.montantHorsTaxe"  disabled>
+        </div>
+      </div>
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="ttc">Montant TTC (MAD)</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="ttc"
+                 [(ngModel)]="facture.montantTtc" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="tva">TVA (%)</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="tva"
+                 [(ngModel)]="facture.tva.valeur" disabled>
+        </div>
+      </div>
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="MontantTva">Montant TVA (MAD)</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"
+                 id="MontantTva" [(ngModel)]="facture.montantTva" disabled>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+  </ng-template>
+</p-dialog>

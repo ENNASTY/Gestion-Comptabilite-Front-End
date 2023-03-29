@@ -9,6 +9,6 @@ export class DeclarationTva {
   public annee: number;
   public mois: number;
   public trim: number;
-  public typeDeclarationTva: TypeDeclarationTva;
+  public typeDeclarationTva=new TypeDeclarationTva() ;
 }
 

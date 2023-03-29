@@ -1,0 +1,67 @@
+<p-dialog [(visible)]="viewDialog" [style]="{width: '450px'}" header="Details Declaration TVA Details" [modal]="true" styleClass="p-fluid">
+  <ng-template pTemplate="content">
+
+    <div class="p-grid ">
+
+      <div class="p-col-6 d-flex" >
+        <div class="p-field">
+          <label for="ref">Ref</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="ref"  [(ngModel)]="selected.ref" disabled>
+        </div>
+      </div>
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="annee">Année</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="annee" [(ngModel)]="selected.annee"  disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="typedeclarationtva">État</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="typedeclarationtva" [(ngModel)]="selected.typeDeclarationTva.libelle" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="mois">Mois</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"  id="mois" [(ngModel)]="selected.mois" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="trim">Triméstre</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"  id="trim" [(ngModel)]="selected.trim" disabled>
+        </div>
+      </div>
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="tvacollecter">TVA Collecter </label>
+          <p-inputNumber [(ngModel)]="selected.tvaCollecte" inputId="locale-user" id="tvacollecter" mode="currency" currency="MAD" [minFractionDigits]="2" ></p-inputNumber>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="tvadeductible">TVA Déductible</label>
+          <p-inputNumber id="tvadeductible" [(ngModel)]="selected.tvaPerdue" inputId="locale-user" mode="currency" currency="MAD" [minFractionDigits]="2" ></p-inputNumber>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="difftva">Différence Tva </label>
+          <p-inputNumber id="difftva" [(ngModel)]="selected.diffTva" inputId="locale-user" mode="currency" currency="MAD" [minFractionDigits]="2" ></p-inputNumber>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+  </ng-template>
+</p-dialog>
+
+
+
