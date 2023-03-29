@@ -15,9 +15,9 @@ export class Facture {
   public montantTtc: number;
   public montantTva: number;
   public tva = new Tva;
-  public declarationIS :DeclarationIS;
-  public declarationTva :DeclarationTva;
-  public declarationIR :DeclarationIR;
-  public typeFacture :TypeFacture;
+  public declarationIS =new DeclarationIS();
+  public declarationTva =new DeclarationTva();
+  public declarationIR =new DeclarationIR();
+  public typeFacture =new TypeFacture();
 
 }

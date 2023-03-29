@@ -6,7 +6,7 @@ import {DeclarationTvaCreateComponent} from './view/declarationTva/declaration-t
 import {HttpClientModule} from "@angular/common/http";
 import {ToastModule} from "primeng/toast";
 import {ToolbarModule} from "primeng/toolbar";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import { DeclarationTvaListComponent } from './view/declarationTva/declaration-tva-list/declaration-tva-list.component';
@@ -16,12 +16,18 @@ import {DialogModule} from "primeng/dialog";
 import {PaginatorModule} from "primeng/paginator";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RippleModule} from "primeng/ripple";
+import {FactureCreateComponent} from "./view/factures/facture-create/facture-create.component";
+import {FactureListComponent} from "./view/factures/facture-list/facture-list.component";
+import { FactureViewComponent } from './view/factures/facture-view/facture-view.component';
 @NgModule({
   declarations: [
     AppComponent,
     DeclarationTvaCreateComponent,
     DeclarationTvaListComponent,
     DeclarationTvaViewComponent,
+    FactureCreateComponent,
+    FactureListComponent,
+    FactureViewComponent,
   ],
     imports: [
         BrowserModule,
@@ -35,6 +41,7 @@ import {RippleModule} from "primeng/ripple";
         PaginatorModule,
         BrowserAnimationsModule,
         RippleModule,
+      ReactiveFormsModule,
     ],
   providers: [MessageService, ConfirmationService,],
   bootstrap: [AppComponent]
