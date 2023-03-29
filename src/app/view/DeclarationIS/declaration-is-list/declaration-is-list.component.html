@@ -1,0 +1,21 @@
+<h1 class="m-4 text-danger">Liste des declarationIs</h1>
+<table class="table table-striped table-hover" *ngIf="declarationsIS.length != 0">
+  <thead>
+  <th>Id </th>
+  <th>Annee</th>
+  <th>Chiffre d'affaire</th>
+  <th>Charge</th>
+  <th>Benefice</th>
+  <th>MontantIS</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let d of declarationsIS">
+    <td>{{d.id}}</td>
+    <td>{{d.annee}}</td>
+    <td>{{d.chiffAffaire}}</td>
+    <td>{{d.charge}}</td>
+    <td>{{d.benifice}}</td>
+    <td>{{d.montantIS}}</td>
+  </tr>
+  </tbody>
+</table>
