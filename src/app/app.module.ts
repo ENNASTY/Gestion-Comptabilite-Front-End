@@ -19,6 +19,11 @@ import {RippleModule} from "primeng/ripple";
 import {FactureCreateComponent} from "./view/factures/facture-create/facture-create.component";
 import {FactureListComponent} from "./view/factures/facture-list/facture-list.component";
 import { FactureViewComponent } from './view/factures/facture-view/facture-view.component';
+import {DeclarationIRCreateComponent} from "./view/DeclarationIR/declaration-ir-create/declaration-ir-create.component";
+import {DeclarationIRListComponent} from "./view/DeclarationIR/declaration-ir-list/declaration-ir-list.component";
+import {DeclarationISCreateComponent} from "./view/DeclarationIS/declaration-is-create/declaration-is-create.component";
+import {DeclarationISListComponent} from "./view/DeclarationIS/declaration-is-list/declaration-is-list.component";
+import { DeclarationIsViewComponent } from './view/DeclarationIS/declaration-is-view/declaration-is-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +33,12 @@ import { FactureViewComponent } from './view/factures/facture-view/facture-view.
     FactureCreateComponent,
     FactureListComponent,
     FactureViewComponent,
+    DeclarationIRCreateComponent,
+    DeclarationIRListComponent,
+    DeclarationIsViewComponent,
+    DeclarationISCreateComponent,
+    DeclarationISListComponent,
+    DeclarationIsViewComponent
   ],
     imports: [
         BrowserModule,

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DeclarationIRServiceService} from "src/app/controller/services/declaration-ir-service.service";
+import {DeclarationIRServiceService} from "src/app/controller/service/declaration-ir-service.service";
 import {DeclarationIR} from "src/app/controller/model/declaration-ir.model";
 
 @Component({
