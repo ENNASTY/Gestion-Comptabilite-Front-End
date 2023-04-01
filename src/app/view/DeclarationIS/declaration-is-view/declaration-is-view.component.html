@@ -1,0 +1,50 @@
+<p-dialog [(visible)]="viewDialog" [style]="{width: '450px'}" header="Details Declaration IS " [modal]="true"
+          styleClass="p-fluid">
+  <ng-template pTemplate="content">
+
+    <div class="p-grid ">
+
+      <div class="p-col-6 d-flex">
+        <div class="p-field">
+          <label for="annee">Année</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"
+                 id="annee" [(ngModel)]="declarationIS.annee" disabled>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="chiffAff">Chiffre d'affaire (MAD)</label>
+        <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"
+               id="chiffAff" [(ngModel)]="declarationIS.chiffAffaire" disabled>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="charge">Charge (MAD)</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"
+                 id="charge" [(ngModel)]="declarationIS.charge" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="benifice">Benifice (MAD)</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"
+                 id="benifice" [(ngModel)]="declarationIS.benifice" disabled>
+        </div>
+      </div>
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="Montant">Montant (MAD)</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example"
+                 id="montant" [(ngModel)]="declarationIS.montantIS" disabled>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+  </ng-template>
+</p-dialog>
+
+
+
