@@ -1,0 +1,36 @@
+<div class="card">
+  <p-toast></p-toast>
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb-2" (click)="openCreate()" ></button>
+    </ng-template>
+  </p-toolbar>
+  <div class="card-header">Liste des employees</div>
+  <div class="card-body">
+    <table class="table table-striped ">
+      <thead>
+      <th>Cin</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Salaire</th>
+
+      <th>Action</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let f of employees">
+        <td>{{f.cin}}</td>
+        <td>{{f.nom}}</td>
+        <td>{{f.prenom}}</td>
+        <td>{{f.salaire}}</td>
+
+        <td><span (click)="deleteEmployee(f)"><i class="fa fa-trash btn btn-danger "></i></span></td>
+        <td><span (click)="openView(f)"><i class="fa fa-eye btn btn-success"></i></span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-employee-create></app-employee-create>
+  <app-employee-view></app-employee-view>
+  <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+</div>
+

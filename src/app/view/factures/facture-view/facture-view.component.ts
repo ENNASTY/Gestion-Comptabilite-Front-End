@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import {DeclarationTvaService} from "../../../controller/service/declaration-tva.service";
 import {FactureService} from "../../../controller/service/facture.service";
-import {DeclarationTva} from "../../../controller/model/declaration-tva.model";
 import {Facture} from "../../../controller/model/facture.model";
 
 @Component({
