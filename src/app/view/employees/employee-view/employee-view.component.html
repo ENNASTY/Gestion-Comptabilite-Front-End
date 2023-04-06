@@ -1,0 +1,47 @@
+<p-dialog [(visible)]="viewDialog" [style]="{width: '450px'}" header="Details employee" [modal]="true"
+          styleClass="p-fluid">
+  <ng-template pTemplate="content">
+    <div class="p-grid ">
+
+      <div class="p-col-6 d-flex">
+        <div class="p-field">
+          <label for="cin">Cin</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="cin"
+                 [(ngModel)]="employee.cin" disabled>
+        </div>
+      </div>
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="nom">Nom de employee</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="nom"
+                 [(ngModel)]="employee.nom" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="prenom">Prenom</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="prenom"
+                 [(ngModel)]="employee.prenom" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="salaire">Salaire de employee</label>
+          <input style="padding: 5px" class="form-control " type="number" aria-label=".form-control-lg example"
+                 id="salaire" [(ngModel)]="employee.salaire" disabled>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+  </ng-template>
+</p-dialog>
