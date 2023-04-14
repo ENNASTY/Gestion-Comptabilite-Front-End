@@ -24,7 +24,7 @@ export class EmployeeCreateComponent implements  OnInit {
         this.employee=null;
       }
       if(data == null){
-        this.messageService.add({severity:'warn', summary: 'Warn', detail: 'Cette employee existe deja !', life: 4000});
+        this.messageService.add({severity:'warn', summary: 'Warn', detail: ' les Informations est incorrects!', life: 4000});
       }
     });
 
