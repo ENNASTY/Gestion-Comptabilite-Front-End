@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import {FactureCreateComponent} from "./view/factures/facture-create/facture-create.component";
 import {FactureListComponent} from "./view/factures/facture-list/facture-list.component";
 import {EmployeeListComponent} from "./view/employees/employee-list/employee-list.component";
-
 import {DeclarationIRListComponent} from "./view/DeclarationIR/declaration-ir-list/declaration-ir-list.component";
 import {DeclarationISListComponent} from "./view/DeclarationIS/declaration-is-list/declaration-is-list.component";
 import {DeclarationTvaListComponent} from "./view/declarationTva/declaration-tva-list/declaration-tva-list.component";
