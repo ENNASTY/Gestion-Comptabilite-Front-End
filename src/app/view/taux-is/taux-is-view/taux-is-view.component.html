@@ -1,0 +1,65 @@
+<p-dialog [(visible)]="viewDialog" [style]="{width: '450px'}" header="Details employee" [modal]="true"
+          styleClass="p-fluid">
+  <ng-template pTemplate="content">
+    <div class="p-grid ">
+
+      <div class="p-col-6 d-flex">
+        <div class="p-field">
+          <label for="ref">Reference</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="ref"
+                 [(ngModel)]="selected.ref" disabled>
+        </div>
+      </div>
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="pourcentage">Pourcentage</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="pourcentage"
+                 [(ngModel)]="selected.pourcentage" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="dateMin">Date Min</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="dateMin"
+                 [(ngModel)]="selected.dateMin" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="Date Max">Date Max</label>
+          <input style="padding: 5px" class="form-control " type="number" aria-label=".form-control-lg example"
+                 id="Date Max" [(ngModel)]="selected.dateMax" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="SalaireMin">Salaire Min</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="SalaireMin"
+                 [(ngModel)]="selected.resultatMax" disabled>
+        </div>
+      </div>
+
+      <div class="p-col-6">
+        <div class="p-field">
+          <label for="SalaireMax">Salaire Max</label>
+          <input style="padding: 5px" class="form-control " type="text" aria-label=".form-control-lg example" id="SalaireMax"
+                 [(ngModel)]="selected.resultatMax" disabled>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Fermer" icon="pi pi-times" class="p-button-text" (click)="hideViewDialog()"></button>
+  </ng-template>
+</p-dialog>
+
+

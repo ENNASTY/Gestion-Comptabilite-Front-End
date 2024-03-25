@@ -1,0 +1,41 @@
+<p-dialog [(visible)]="createDialog" [style]="{width: '450px'}" header="Ajouter un TauxIr" [modal]="true"
+          styleClass="p-fluid">
+  <ng-template pTemplate="content">
+    <div class="card">
+      <p-toast></p-toast>
+      <p-toast position="top-left" key="tl"></p-toast>
+      <div class="card-body">
+
+        <div class="form-group">
+          <label for="ref">Reference</label>
+          <input id="ref" type="text" [(ngModel)]="selected.ref " class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="salairemin ">SalaireMin</label>
+          <input id="salairemin " type="number" [(ngModel)]="selected.resultatMin" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="salairemax">SalaireMax</label>
+          <input id="salairemax" type="number" [(ngModel)]="selected.resultatMax" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="datemin">Date Min</label>
+          <input id="datemin" type="date" [(ngModel)]="selected.dateMin" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="datemax">Date Max</label>
+          <input id="datemax" type="date" [(ngModel)]="selected.dateMax" class="form-control">
+        </div>
+
+
+
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-outline-success" type="button" (click)="save()">Ajouter</button>
+      </div>
+    </div>
+  </ng-template>
+
+</p-dialog>
+
+

@@ -37,7 +37,7 @@ export class EmployeeListComponent implements OnInit {
   public deleteEmployee(employee: Employee){
     this.employee = employee;
     this.confirmationService.confirm({
-      message: 'Voulez-vous supprimer la employee - ' + employee.cin + '?',
+      message: 'Voulez-vous supprimer l\'employee - ' + employee.cin + '?',
       header: 'Confirm',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
@@ -47,7 +47,7 @@ export class EmployeeListComponent implements OnInit {
           this.messageService.add({
             severity: 'success',
             summary: 'Successful',
-            detail: 'Facture supprimee!',
+            detail: 'Employee supprimee!',
             life: 3000
           });
         });

@@ -1,0 +1,37 @@
+<div class="card">
+  <p-toast position="center-right"></p-toast>
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+      <button pButton  label ="New" icon="pi pi-plus" class="p-mr-2 p-mb-4" class="button1" (click)="openCreate()"></button>
+    </ng-template>
+  </p-toolbar>
+  <div class="card-header">Liste des employees</div>
+  <div class="card-body">
+    <table class="table table-striped ">
+      <thead>
+      <th><span>reference</span></th>
+      <th><span>SalaireMin</span></th>
+      <th><span>SalaireMax</span></th>
+      <th><span>Action</span></th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of items ;index as i " class="">
+
+        <td >{{c.ref}}</td>
+        <td>{{c.resultatMin}}</td>
+        <td>{{c.resultatMax}}</td>
+        <td><span (click)="delete(c)"><i class="fa fa-trash btn btn-danger "></i></span></td>
+        <td><span (click)="openView(c)"><i class="fa fa-eye btn btn-success"></i></span></td>
+        <td><span (click)="editCreate(c)"><i class="fa fa-pencil btn btn-success"></i></span></td>
+      </tr>
+      <td>
+      </tbody>
+    </table>
+  </div>
+  <app-taux-is-create></app-taux-is-create>
+ <app-taux-is-view></app-taux-is-view>
+  <app-taux-is-edit></app-taux-is-edit>
+  <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+</div>
+
+

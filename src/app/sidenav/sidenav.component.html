@@ -1,0 +1,32 @@
+<div id="mySidenav" style="top: 50px;" class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : 'sidenav' ">
+  <div class="Logo-container">
+      <button class="Logo" (click)="togglecollapse()"><i class="fa-solid fa-bars"></i></button>
+      <div class="Logo-text" *ngIf="collapsed">Menu</div>
+      <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+        <i class="fa-solid fa-x" style="color: #fff;font-size: 20px;"></i>
+      </button>
+    </div>
+  <ul class="sidenav-nav">
+      <li style="padding-top: 15px;padding-bottom: 15px;" class="sidenav-nav-item" *ngFor="let data of navData">
+          <a *ngIf="!data.submenus || data.submenus.length === 0" [routerLink]="[data.routeLink]"
+              class="sidenav-nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"
+              (click)="closeSidenav()">
+              <i class="sidenav-link-icon" [class]="data.icon"></i>
+              <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+          </a>
+          <div *ngIf="data.submenus.length > 0" class="sidenav-dropdown">
+              <a class="sidenav-nav-link">
+                  <i style="padding-right: 10px;" class="sidenav-link-icon" [class]="data.icon"></i>
+                  <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+                  <i class="fa fa-angle-right dropdown-icon" [ngClass]="collapsed? 'rotation':'rotation_reverse'"></i>
+              </a>
+              <ul [ngClass]="collapsed? 'sidenav-dropdown-list-expand' : 'sidenav-dropdown-list'">
+                  <li class="sidenav-dropdown-item" *ngFor="let submenu of data.submenus">
+                      <a [routerLink]="[submenu.routeLink]" (click)="closeSidenav()" class="sidenav-dropdown-link"
+                          routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">{{submenu.label}}</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+  </ul>
+</div>

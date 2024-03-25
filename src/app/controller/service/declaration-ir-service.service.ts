@@ -16,7 +16,7 @@ export class DeclarationIRServiceService {
   public save():Observable<DeclarationIR>{
     return this.http.post<DeclarationIR>(this._url , this.declarationIR);
   }
-  public findAll(declarationsIR : DeclarationIR):Observable<Array<DeclarationIR>>{
+  public findAll():Observable<Array<DeclarationIR>>{
     return this.http.get<Array<DeclarationIR>>(this._url);
   }
   constructor(private http:HttpClient) { }

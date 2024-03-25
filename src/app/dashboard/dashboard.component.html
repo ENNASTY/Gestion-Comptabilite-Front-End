@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div style="margin-bottom: 20px;">
+            <h2 style="font-family: 'Merriweather', serif;"><i class="fa-solid fa-house icon-home"></i> Acceuil</h2>
+        </div>
+        <div class="col-lg-4 col-md-6" *ngFor="let item of dashData">
+            <div class="card {{item.class}}">
+                <a class="card-link" [routerLink]="[item.route]">
+                    <div class="card-statistic-3 p-4">
+                        <div class="card-icon card-icon-large">
+                            <i style="margin-left: -9rem;" [class]="item.icon"></i>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="card-title mb-0">{{item.title}}</h5>
+                        </div>
+                        <div class="row align-items-center mb-2 d-flex">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center mb-0">{{item.value}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12 mb-4 mx-auto" style="width: 30%; margin-top: 50px;">
+            <div>
+                <div class="card-header">
+                    Graphique
+                </div>
+                <div class="card-body">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

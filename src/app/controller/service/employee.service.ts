@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Employee} from '../model/employee.model';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +15,16 @@ export class EmployeeService {
   private _createDialog: boolean;
 
 
+
   constructor(private _http: HttpClient) { }
   public save(): Observable<Employee> {
     return this._http.post<Employee>(this._url, this.employee);
   }
 
   public findAll(): Observable<Array<Employee>> {
-    return this._http.get<Array<Employee>>(this._url);
+    return this._http.get<Array<Employee>>(this._url)
   }
+  
 
   public deleteByCin(cin: string): Observable<number> {
     return this._http.delete<number>(this._url + 'cin/' + cin);

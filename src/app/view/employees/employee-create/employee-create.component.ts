@@ -20,11 +20,11 @@ export class EmployeeCreateComponent implements  OnInit {
     this.employeeService.save().subscribe(data => {
       if (data != null) {
         this.employees.push({...data});
-        this.messageService.add({severity:'success', summary: 'Success', detail: 'Employee bien enregistrée!', life: 4000});
+        this.messageService.add({severity:'success', summary: 'Success', detail: 'Employée bien enregistré!', life: 4000});
         this.employee=null;
       }
       if(data == null){
-        this.messageService.add({severity:'warn', summary: 'Warn', detail: 'Cette employee existe deja !', life: 4000});
+        this.messageService.add({severity:'warn', summary: 'Warn', detail: ' les Informations est incorrects!', life: 4000});
       }
     });
 
